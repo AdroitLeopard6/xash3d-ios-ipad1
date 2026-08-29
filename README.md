@@ -31,7 +31,7 @@ Performance in tested areas is approximately 50–60 FPS.
 ## Screenshots
 
 <p align="center">
-  <img src="iimages/20260829_102432.jpg" width="48%">
+  <img src="images/20260829_102432.jpg" width="48%">
   <img src="images/halflife-ipad1.jpg" width="48%">
 </p>
 
