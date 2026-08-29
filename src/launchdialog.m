@@ -60,7 +60,7 @@ const char *IOS_GetDocsDir()
 	{
 		static char dir[1024];
 		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-		NSString *basePath = paths.firstObject;
+		NSString *basePath = [paths objectAtIndex:0];
 		[[NSFileManager defaultManager] createDirectoryAtPath:basePath withIntermediateDirectories:YES attributes:nil error:nil];
 		strcpy(dir,[basePath UTF8String]);
 		mkdir(dir,777);
@@ -150,9 +150,14 @@ void IOS_LaunchDialog( void )
 	NSLog(@"System Version is %@",[[UIDevice currentDevice] systemVersion]);
 	NSString *ver = [[UIDevice currentDevice] systemVersion];
 	g_iOSVer = [ver floatValue];
-	IOS_PrepareView();
+
+	/*
+	 * iOS 5/6: let SDL create and own the game window.
+	 * The old launcher UIWindow can cover the SDL/OpenGL view.
+	 */
 	if( g_iOSVer >= 7.0 )
 	{
+	IOS_PrepareView();
 	int button = -1, bExit, bStart;
 	UIAlertView * alert = [[UIAlertView alloc] init];
 	bExit = [alert addButtonWithTitle:@"Exit"];
@@ -335,7 +340,7 @@ void IOS_LaunchDialog( void )
 char *IOS_GetUDID( void )
 {
 	static char udid[256];
-	NSString *id = [[[UIDevice currentDevice]identifierForVendor] UUIDString];
+	NSString *id = [[UIDevice currentDevice] uniqueIdentifier];
 	strncpy( udid, [id UTF8String], 255 );
 	[id release];
 	return udid;

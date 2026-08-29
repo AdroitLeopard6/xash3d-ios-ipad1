@@ -1,2 +1,44 @@
-xcuserdata/
+# Build output
+build-ios5/
+build/
+*.o
+*.a
+*.ipa
+
+# Downloaded archives
+*.tar.gz
+*.tar.xz
+*.zip
+
+# Backups / experiments
+*.bak
+*.GOLDEN
+*.before-*
+*.WORKING-*
+*original*/
+prebuilt/armv7-original/
+
+# Temporary SDL copy
+SDL-2.0.5-patched/
+
+# Half-Life game files - NEVER COMMIT
+valve/
+valve-*/
+hl-low/
+*.wad
+*.bsp
+
+# Apple SDK / toolchains
+*.sdk/
+SDK/
+toolchain/
+
+# Logs / misc
+*.log
 .DS_Store
+Thumbs.db
+
+# Development snapshots
+*.GOLDEN-*
+*.pre-ios5-fix
+*.backup
