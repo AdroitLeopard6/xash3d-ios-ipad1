@@ -28,6 +28,25 @@ Working:
 
 Performance in tested areas is approximately 50–60 FPS.
 
+## Screenshots
+
+<p align="center">
+  <img src="iimages/20260829_102432.jpg" width="48%">
+  <img src="images/halflife-ipad1.jpg" width="48%">
+</p>
+
+<p align="center">
+  <img src="images/gameplay-ipad1.jpg" width="48%">
+  <img src="images/gameplay2-ipad1.jpg" width="48%">
+</p>
+
+<p align="center">
+  <img src="images/hazard-course.jpg" width="48%">
+  <img src="images/black-mesa.jpg" width="48%">
+</p>
+
+> Running on a real original iPad 1 (iPad1,1) with iOS 5.1.1.
+
 ## Main changes
 
 This port includes several changes required for the original iPad:
